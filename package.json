@@ -1,0 +1,24 @@
+{
+  "name": "autoscraper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/genai": "^1.46.0",
+    "cheerio": "^1.2.0",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^17.3.1",
+    "puppeteer": "^24.40.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
