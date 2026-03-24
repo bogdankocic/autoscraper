@@ -21,7 +21,16 @@ async function main() {
         process.exit(1);
     }
 
-    const allRawJobs: JobRaw[] = JSON.parse(fs.readFileSync(RAW_JOBS_FILE, 'utf-8'));
+    let allRawJobs: JobRaw[] = JSON.parse(fs.readFileSync(RAW_JOBS_FILE, 'utf-8'));
+
+    const limitArgIndex = process.argv.indexOf('--limit');
+    if (limitArgIndex !== -1 && process.argv[limitArgIndex + 1]) {
+        const limit = parseInt(process.argv[limitArgIndex + 1], 10);
+        if (!isNaN(limit) && limit > 0) {
+            allRawJobs = allRawJobs.slice(0, limit);
+            console.log(`Limiting analysis to the first ${limit} jobs.`);
+        }
+    }
 
     if (allRawJobs.length === 0) {
         console.log('No jobs found to analyze.');

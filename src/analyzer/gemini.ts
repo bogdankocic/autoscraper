@@ -105,7 +105,7 @@ export async function analyzeJobs(jobs: JobRaw[], outputFile: string, existingUr
 
     try {
       const response = await ai.models.generateContent({
-        model: 'gemini-3-pro-preview',
+        model: 'gemini-3-flash-preview',
         contents: prompt,
         config: {
           systemInstruction: SYSTEM_INSTRUCTION,
