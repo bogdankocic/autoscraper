@@ -11,8 +11,9 @@ export type AutomatableLevel = 'Low' | 'Medium' | 'High';
 
 export interface JobAnalyzed extends JobRaw {
   job_category: string;
-  is_automatable: boolean;
-  what_is_automatable: string;
-  complexity: AutomatableLevel;
+  automation_potential: AutomatableLevel;
+  automatable_tasks: string[];
+  implementation_complexity: AutomatableLevel;
   sale_potential: AutomatableLevel;
+  confidence: AutomatableLevel;
 }

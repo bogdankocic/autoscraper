@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  scraper:
+    build: .
+    container_name: autoscraper
+    env_file:
+      - .env
+    # We map the local directory as a volume so the jobs_raw.json 
+    # and jobs_ranked.csv files get saved back to your host machine!
+    volumes:
+      - ./:/app
+    # Keep the container running in the background so you can run scripts manually
+    command: tail -f /dev/null

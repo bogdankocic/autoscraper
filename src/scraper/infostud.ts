@@ -1,9 +1,10 @@
 import puppeteer, { Page, Browser } from 'puppeteer';
 import { JobRaw } from '../types';
+import { appendToJsonFile } from '../utils';
 
-export async function scrapeInfostud(categories: string[]): Promise<JobRaw[]> {
-  const browser = await puppeteer.launch({ headless: true });
-  const allJobs: JobRaw[] = [];
+export async function scrapeInfostud(categories: string[], outputFile: string, existingUrls: Set<string>): Promise<number> {
+  const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+  let jobCount = 0;
 
   try {
     for (const categoryUrl of categories) {
@@ -55,6 +56,11 @@ export async function scrapeInfostud(categories: string[]): Promise<JobRaw[]> {
       console.log(`Found ${uniqueJobLinks.length} total job links in ${categoryUrl}`);
 
       for (const link of uniqueJobLinks) {
+        if (existingUrls.has(link)) {
+          console.log(`Skipping already scraped job: ${link}`);
+          continue;
+        }
+
         console.log(`Scraping Infostud job: ${link}`);
         try {
           const detailPage = await browser.newPage();
@@ -69,13 +75,17 @@ export async function scrapeInfostud(categories: string[]): Promise<JobRaw[]> {
             return { title, description };
           });
 
-          allJobs.push({
+          const job: JobRaw = {
             url: link,
             source: 'infostud',
             category_url: categoryUrl,
             title: jobData.title.trim(),
-            description: jobData.description.trim().substring(0, 15000), // Limit length for LLM
-          });
+            description: jobData.description.trim().substring(0, 15000),
+          };
+
+          appendToJsonFile(outputFile, job);
+          jobCount++;
+          console.log(`  Saved job ${jobCount}: ${job.title}`);
 
           await detailPage.close();
         } catch (err) {
@@ -87,5 +97,5 @@ export async function scrapeInfostud(categories: string[]): Promise<JobRaw[]> {
     await browser.close();
   }
 
-  return allJobs;
+  return jobCount;
 }

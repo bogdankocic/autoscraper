@@ -1,8 +1,34 @@
 {
   "infostud": [
-    "https://poslovi.infostud.com/oglasi-za-posao-it"
+    "https://poslovi.infostud.com/oglasi-za-posao-it",
+    "https://poslovi.infostud.com/oglasi-za-posao-prodaja",
+    "https://poslovi.infostud.com/oglasi-za-posao-administracija",
+    "https://poslovi.infostud.com/oglasi-za-posao-finansije",
+    "https://poslovi.infostud.com/oglasi-za-posao-marketing",
+    "https://poslovi.infostud.com/oglasi-za-posao-inzenjering",
+    "https://poslovi.infostud.com/oglasi-za-posao-proizvodnja",
+    "https://poslovi.infostud.com/oglasi-za-posao-logistika",
+    "https://poslovi.infostud.com/oglasi-za-posao-gradjevinarstvo",
+    "https://poslovi.infostud.com/oglasi-za-posao-turizam-ugostiteljstvo",
+    "https://poslovi.infostud.com/oglasi-za-posao-zdravstvo",
+    "https://poslovi.infostud.com/oglasi-za-posao-obrazovanje",
+    "https://poslovi.infostud.com/oglasi-za-posao-pravo",
+    "https://poslovi.infostud.com/oglasi-za-posao-ljudski-resursi",
+    "https://poslovi.infostud.com/oglasi-za-posao-bezbednost",
+    "https://poslovi.infostud.com/oglasi-za-posao-poljoprivreda",
+    "https://poslovi.infostud.com/oglasi-za-posao-zanati",
+    "https://poslovi.infostud.com/oglasi-za-posao-odrzavanje",
+    "https://poslovi.infostud.com/oglasi-za-posao-call-centar",
+    "https://poslovi.infostud.com/oglasi-za-posao-ostalo"
   ],
   "helloworld": [
-    "https://www.helloworld.rs/oglasi-za-posao/programiranje"
+    "https://www.helloworld.rs/oglasi-za-posao/programiranje",
+    "https://www.helloworld.rs/oglasi-za-posao/menadzment",
+    "https://www.helloworld.rs/oglasi-za-posao/sistemska-administracija",
+    "https://www.helloworld.rs/oglasi-za-posao/aiml",
+    "https://www.helloworld.rs/oglasi-za-posao/ux-dizajn",
+    "https://www.helloworld.rs/oglasi-za-posao/kategorija-qa",
+    "https://www.helloworld.rs/oglasi-za-posao/podrska",
+    "https://www.helloworld.rs/oglasi-za-posao/prodaja-konsultanti"
   ]
 }

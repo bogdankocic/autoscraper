@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "scrape": "npx ts-node src/scrape.ts",
+    "analyze": "npx ts-node src/analyze.ts",
+    "export": "npx ts-node src/export.ts",
+    "assign-ids": "node add_ids.js"
   },
   "keywords": [],
   "author": "",
